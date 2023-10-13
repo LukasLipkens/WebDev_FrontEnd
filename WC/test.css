@@ -1,0 +1,6 @@
+form{
+    transform: translate(50%, 50%);
+    flex-direction: column;
+
+    align-content: center;
+}

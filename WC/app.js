@@ -16,7 +16,7 @@ template.innerHTML = /*html*/`
 
   <body>
 
- kiekeboe
+    <h1>Kikeboe</h1>
  
     <newcomp-lukas></newcomp-lukas>
 
