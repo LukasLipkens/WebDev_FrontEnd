@@ -43,7 +43,7 @@ template.innerHTML = /*html*/`
 
 //#region CLASS
 
-window.customElements.define('newcomp-lukas', class extends HTMLElement {
+window.customElements.define('newcomp-comp', class extends HTMLElement {
 
    constructor() {
 
