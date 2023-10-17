@@ -4,3 +4,8 @@ form{
 
     align-content: center;
 }
+img{
+    object-fit: contain;
+    object-position: center;
+}
+
