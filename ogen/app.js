@@ -1,11 +1,14 @@
 //#region IMPORTS
 import "./eye.js"
+import "./testing.js"
+import "./joystick.js"
 //#endregion IMPORTS
 
 const template = document.createElement("template")
 template.innerHTML = /*html*/`
 
     <eye-comp></eye-comp>
+    <!-- <joystick-comp></joystick-comp> -->
 `
 
 class app extends HTMLElement
