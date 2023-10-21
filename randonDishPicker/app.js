@@ -59,7 +59,7 @@ class App extends HTMLElement{
 
         let value = this.randomUniqueNum(5, 5)
 
-        for(let count = 0; count < 5; count++){
+        for(let count = 0; count < 10; count++){
             console.log("adding card #"+count)
 
             if(count == 1){

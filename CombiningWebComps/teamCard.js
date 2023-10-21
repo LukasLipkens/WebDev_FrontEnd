@@ -41,7 +41,7 @@ template.innerHTML = /*html*/`
 <div class="grid-container">
   <div id="item1"></div>
   <div id="item2"><img></div>
-  <div id="item3">terrorist</div>  
+  <div id="item3"></div>  
   <div id="item4"><button id="infoBtn">Hide Info</button></div>
 </div>
 
@@ -55,6 +55,8 @@ class TeamCard extends HTMLElement {
     shadow.append(template.content.cloneNode(true));
     this.shadowRoot.querySelector("#item1").innerHTML = this.getAttribute("name");
     this.shadowRoot.querySelector("#item2 img").src = this.getAttribute("image");
+    this.shadowRoot.querySelector("#item3").innerHTML = this.getAttribute("job");
+
   }
 
   toggleInfo(){
