@@ -30,7 +30,7 @@ template.innerHTML = /*html*/`
     <div id="container">
         <div id="leftControl">
             <joystick-comp id="leftEye" x="" y=""></joystick-comp>
-            <joystick-comp id="leftEyebrow" x="" y=""></joystick-comp>
+            <joystick-comp id="leftEyeFull" x="" y=""></joystick-comp>
         </div>
         <div id="eyesContainer">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -281,7 +281,7 @@ template.innerHTML = /*html*/`
         </div>
         <div id="rightControl">
             <joystick-comp id="rightEye" x="" y=""></joystick-comp>
-            <joystick-comp id="rightEyebrow" x="" y=""></joystick-comp>
+            <joystick-comp id="rightEyeFull" x="" y=""></joystick-comp>
         </div>
     </div>
 `
@@ -294,11 +294,18 @@ class eye extends HTMLElement
         shadow.append(template.content.cloneNode(true))
         
         this.leftEye = this.shadowRoot.querySelector("#leftEye");
-        this.leftEyebrow = this.shadowRoot.querySelector("#leftEyebrow");
+        this.leftEyeFull = this.shadowRoot.querySelector("#leftEyeFull");
         this.rightEye = this.shadowRoot.querySelector("#rightEye");
-        this.rightEyebrow = this.shadowRoot.querySelector("#rightEyebrow");
+        this.rightEyeFull = this.shadowRoot.querySelector("#rightEyeFull");
+
+        //selecteerd de wenkbrouwen
         this.leftBrow = this.shadowRoot.querySelector("#brow_L");
         this.rightBrow = this.shadowRoot.querySelector("#brow_R")
+
+        //selecteerd de volledige ogen
+        this.leftFullEye = this.shadowRoot.querySelector("#Ir_L");
+        this.rightFullEye = this.shadowRoot.querySelector("#Ir_R");
+
     }
     
     handler(e){
@@ -310,22 +317,32 @@ class eye extends HTMLElement
                 console.log(e.detail);
                 break;
                 
-            case "leftEyebrow":
+            case "leftEyeFull":
                 // console.log(e.detail);
 
-                y = +this.leftEyebrow.getAttribute("y");
+                y = +this.leftEyeFull.getAttribute("y");
                 this.leftBrow.setAttribute("d", `M748.4,${(2675+y)}.8c0,0,147.8-154.1,279.4-7.5l0,0c10.4-19.2,7.1-42.9-8-58.6C969.1,${2557 + y}.1,848.4,${(2468 + y)}.2,748.4,${(2675 + y)}.8z`);
+                
+                //<g id="Ir_L" transform="rotate(-8,820,3410)">
+                x= +this.leftEyeFull.getAttribute("x");
+                this.leftFullEye.setAttribute("transform", `rotate(-${(x/100)*14},820,3410)`);
+
                 break;
 
             case "rightEye":
                 console.log(e.detail);
                 break;
 
-            case "rightEyebrow":
+            case "rightEyeFull":
                 // console.log(e.detail);
 
-                y = +this.rightEyebrow.getAttribute("y");
+                y = +this.rightEyeFull.getAttribute("y");
                 this.rightBrow.setAttribute("d",`M1445.7,${(2675+y)}.3c0,0-147.8-154.1-279.4-7.5l0,0c-10.4-19.2-7.1-42.9,8-58.6C1225.1,${2557 + y}.6,1345.7,${(2468 + y)}.6,1445.7,${(2675 + y)}.3z`);
+                
+                x= +this.rightEyeFull.getAttribute("x");
+                this.rightFullEye.setAttribute("transform", `rotate(${(x/100)*14},1390,3400)`);
+                // rotate(8,1390,3400)
+
                 break;
         }
     }
