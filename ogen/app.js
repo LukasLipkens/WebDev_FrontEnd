@@ -8,7 +8,6 @@ const template = document.createElement("template")
 template.innerHTML = /*html*/`
 
     <eye-comp></eye-comp>
-    <!-- <joystick-comp></joystick-comp> -->
 `
 
 class app extends HTMLElement

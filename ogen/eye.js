@@ -357,12 +357,12 @@ class eye extends HTMLElement
                 y = +this.leftEye.getAttribute("y");
                 x = +this.leftEye.getAttribute("x");
 
-                this.pupil_L.setAttribute("d", `M${955 - x}.9,${3198 - y}.1c9.1-50-14.1-96-51.8-102.8c-37.7-6.8-75.5,28.2-84.6,78.1s14.1,96,51.8,102.8C${909 - x},${3283 - y}.1,${946 - x}.8,${3248 - y}.1,${955 - x}.9,${3198 - y}.1z`);
+                this.pupil_L.setAttribute("d", `M${855 + x}.9,${3098 + y}.1c9.1-50-14.1-96-51.8-102.8c-37.7-6.8-75.5,28.2-84.6,78.1s14.1,96,51.8,102.8C${809 + x},${3183 + y}.1,${846 + x}.8,${3148 + y}.1,${855 + x}.9,${3098 + y}.1z`);
 
-                this.blue_L.setAttribute("d", `M${1021 - x}.5,${3215 - y}.3c-17.8,98.7-91.4,168.1-164.5,155c-73-13.2-117.8-103.9-100-202.6s91.4-168.1,164.5-155C${994 - x}.5,${3025 - y}.8,${1039 - x}.3,${3116 - y}.5,${1021 - x}.5,${3215 - y}.3z`);
+                this.blue_L.setAttribute("d", `M${921 + x}.5,${3115 + y}.3c-17.8,98.7-91.4,168.1-164.5,155c-73-13.2-117.8-103.9-100-202.6s91.4-168.1,164.5-155C${894 + x}.5,${2925 + y}.8,${939 + x}.3,${3016 + y}.5,${921 + x}.5,${3115 + y}.3z`);
                 
-                this.highlight_L.setAttribute("cx", `${842.3 - x}`);
-                this.highlight_L.setAttribute("cy", `${3137.9 - y}`);
+                this.highlight_L.setAttribute("cx", `${742.3 + x}`);
+                this.highlight_L.setAttribute("cy", `${3037.9 + y}`);
                 cx="792.3"
                 cy="3087.9"
                 break;
@@ -375,7 +375,7 @@ class eye extends HTMLElement
                 
                 //<g id="Ir_L" transform="rotate(-8,820,3410)">
                 x= +this.leftEyeFull.getAttribute("x");
-                this.leftFullEye.setAttribute("transform", `rotate(-${(x/100)*14},820,3410)`);
+                this.leftFullEye.setAttribute("transform", `rotate(${-14+(x/100)*14},820,3410)`);
 
                 break;
 
@@ -385,12 +385,12 @@ class eye extends HTMLElement
                 y = +this.rightEye.getAttribute("y");
                 x = +this.rightEye.getAttribute("x");
 
-                this.pupil_R.setAttribute("d", `M${1338 - x}.2,${3180 - y}.6c-9.1-50,14.1-96,51.8-102.8c37.7-6.8,75.5,28.2,84.6,78.1c9.1,50-14.1,96-51.8,102.8 S${1347 - x}.3,${3230-y}.6,${1338 - x}.2,${3180-y}.6z`);
+                this.pupil_R.setAttribute("d", `M${1238 + x}.2,${3080 + y}.6c-9.1-50,14.1-96,51.8-102.8c37.7-6.8,75.5,28.2,84.6,78.1c9.1,50-14.1,96-51.8,102.8 S${1247 + x}.3,${3130 + y}.6,${1238 + x}.2,${3080 + y}.6z`);
 
-                this.blue_R.setAttribute("d", `M${1272 - x}.7,${3197 - y}.7c17.8,98.7,91.4,168.1,164.5,155s117.8-103.9,100-202.6s-91.4-168.1-164.5-155C${1299 - x}.6,${3008 - y}.3,${1254 - x}.9,${3099 - y},${1272 - x}.7,${3197 - y}.7z`);
+                this.blue_R.setAttribute("d", `M${1172 + x}.7,${3097 + y}.7c17.8,98.7,91.4,168.1,164.5,155s117.8-103.9,100-202.6s-91.4-168.1-164.5-155C${1199 + x}.6,${2908 + y}.3,${1154 + x}.9,${2999 + y},${1172 + x}.7,${3097 + y}.7z`);
 
-                this.highlight_R.setAttribute("cx", `${1451.8 - x}`);
-                this.highlight_R.setAttribute("cy", `${3120.3 - y}`);
+                this.highlight_R.setAttribute("cx", `${1351.8 + x}`);
+                this.highlight_R.setAttribute("cy", `${3020.3 + y}`);
 
 
                 break;
