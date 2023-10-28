@@ -352,7 +352,7 @@ class eye extends HTMLElement
         let y = 0;
         switch(e.detail){
             case "leftEye":
-                console.log(e.detail);
+                //console.log(e.detail);
                 
                 y = +this.leftEye.getAttribute("y");
                 x = +this.leftEye.getAttribute("x");
@@ -363,8 +363,8 @@ class eye extends HTMLElement
                 
                 this.highlight_L.setAttribute("cx", `${742.3 + x}`);
                 this.highlight_L.setAttribute("cy", `${3037.9 + y}`);
-                cx="792.3"
-                cy="3087.9"
+
+                
                 break;
                 
             case "leftEyeFull":
@@ -380,7 +380,7 @@ class eye extends HTMLElement
                 break;
 
             case "rightEye":
-                console.log(e.detail);
+                //console.log(e.detail);
 
                 y = +this.rightEye.getAttribute("y");
                 x = +this.rightEye.getAttribute("x");

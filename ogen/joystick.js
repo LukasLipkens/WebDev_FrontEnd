@@ -76,9 +76,7 @@ class app extends HTMLElement
                 this.joystick.style.left = `${clampedX}px`;
                 this.joystick.style.top = `${clampedY}px`;
 
-
-
-                this.updatePosition(clampedX, clampedY);
+                this.updatePosition(clampedX, clampedY, maxX, maxY);
               }
             };
       
@@ -101,9 +99,9 @@ class app extends HTMLElement
         }));
     }
 
-    updatePosition(x, y){
-        this.xCord = Math.round((x/164) * 100);
-        this.yCord = Math.round((y/164) * 100);
+    updatePosition(x, y, maxX, maxY){
+        this.xCord = Math.round((x/maxX) * 100);
+        this.yCord = Math.round((y/maxY) * 100);
 
         this.position.innerHTML = ` x = ${this.xCord} | y = ${this.yCord}`
         this.setAttribute("x", this.xCord);
