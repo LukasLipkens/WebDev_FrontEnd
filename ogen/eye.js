@@ -24,6 +24,36 @@ template.innerHTML = /*html*/`
             margin: auto;
             
         }
+        .lid { animation: blink 2.7s infinite; }
+
+        .eye { animation: squeeze 2.7s infinite; }
+
+        @keyframes blink {
+            90% {
+            transform: none;
+            animation-timing-function: ease-in;
+            }
+            93% {
+            transform: translateY(3000px) scaleY(0.1)
+            }
+            100% {
+            animation-timing-function: ease-out;
+            }
+        }
+
+        @keyframes squeeze {
+            90% {
+            transform: none;
+            animation-timing-function: ease-in;
+            }
+            93% {
+            transform: translateY(680px) scaleY(0.8)
+            }
+            100% {
+            animation-timing-function: ease-out;
+            }
+
+        }
     </style>
 
 
@@ -71,7 +101,7 @@ template.innerHTML = /*html*/`
             </g> -->
 
                 <!-- <g id="Art_Work"> -->
-                <g id="I_L" transform="translate(0,-10)">
+                <g id="I_L" class="eye" transform="translate(0,-10)">
                     <g id="Ir_L" transform="rotate(-8,820,3410)">
                         <g> <!-- wit + rand -->
                             <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="641.6958" y1="3119.6733" x2="1062.3857"
@@ -126,10 +156,10 @@ template.innerHTML = /*html*/`
                             <stop offset="0.9863" style="stop-color:#9FCBD2" />
                             <stop offset="1" style="stop-color:#9AC8D0" />
                         </radialGradient>
-                        
+
+                        <g class="lid">
                         <!-- eye blue L -->
-                        <path class="st1" d="M971.5,3165.3c-17.8,98.7-91.4,168.1-164.5,155c-73-13.2-117.8-103.9-100-202.6s91.4-168.1,164.5-155
-                        C944.5,2975.8,989.3,3066.5,971.5,3165.3z" />
+                        <path id="blue_L" class="st1" d="M971.5,3165.3c-17.8,98.7-91.4,168.1-164.5,155c-73-13.2-117.8-103.9-100-202.6s91.4-168.1,164.5-155C944.5,2975.8,989.3,3066.5,971.5,3165.3z" />
                         
                         <radialGradient id="SVGID_3_" cx="837.7084" cy="3135.7969" r="81.4286" gradientUnits="userSpaceOnUse">
                             <stop offset="0" style="stop-color:#4D4D4D" />
@@ -142,13 +172,13 @@ template.innerHTML = /*html*/`
                         </radialGradient>
 
                         <!-- pupil L -->
-                        <path class="st2" d="M905.9,3148.1c9.1-50-14.1-96-51.8-102.8c-37.7-6.8-75.5,28.2-84.6,78.1s14.1,96,51.8,102.8
-                        C859,3233.1,896.8,3198.1,905.9,3148.1z" />
+                        <path id="pupil_L" class="st2" d="M905.9,3148.1c9.1-50-14.1-96-51.8-102.8c-37.7-6.8-75.5,28.2-84.6,78.1s14.1,96,51.8,102.8C859,3233.1,896.8,3198.1,905.9,3148.1z" />
+                        
 
                         <!-- circle highlight L -->
-                        <ellipse transform="matrix(0.3901 -0.9208 0.9208 0.3901 -2360.011 2612.7961)" class="st3" cx="792.3"
+                        <ellipse id="highlight_L" class="st3" cx="792.3"
                             cy="3087.9" rx="31.3" ry="31.3" />
-
+                        </g>
                         <!-- wimper mid links -->
                         <path d="M697.1,2980.1c0,0-110.2,7.5-117.8-115.3c0,0-36.3,125.3,96.5,147.8L697.1,2980.1z" />
                         <!-- <path opacity=".5" fill="red" transform="translate(-10)" d="M707.1,2980.1c0,0-110.2,7.5-117.8-115.3c0,0-36.3,125.3,96.5,147.8L707.1,2980.1z"/> -->
@@ -164,16 +194,15 @@ template.innerHTML = /*html*/`
                         <!-- brow L -->
                         <path id="brow_L"
                             d="M748.4,2725.8c0,0,147.8-154.1,279.4-7.5l0,0c10.4-19.2,7.1-42.9-8-58.6C969.1,2607.1,848.4,2518.2,748.4,2725.8z" />
-                            d="M748.4,2675.8c0,0,147.8-154.1,279.4-7.5l0,0c10.4-19.2,7.1-42.9-8-58.6C969.1,2557.1,848.4,2468.2,748.4,2675.8z"/>
 
                         <!-- highlight ellipse L -->
                         <ellipse class="st3" cx="862.1" cy="3064.9" rx="22.7" ry="8.5" />
-
+                        
                     </g>
                         <!-- eye bag L-->
                         <path d="M672,3444.9c0,0,176.6-117.8,309.4-6.3C981.4,3438.6,773.5,3403.5,672,3444.9z" />
                     </g>
-                    <g id="I_R">
+                    <g id="I_R" class="eye">
                     <g id="Ir_R" transform="rotate(8,1390,3400)">
                         <g> <!-- wit + rand R -->
                             <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="3786.4717" y1="3102.136" x2="4207.1616"
@@ -230,10 +259,9 @@ template.innerHTML = /*html*/`
                             <stop offset="0.9863" style="stop-color:#9FCBD2" />
                             <stop offset="1" style="stop-color:#9AC8D0" />
                         </radialGradient>
-                        
+                        <g class="lid">
                         <!-- eye blue R -->
-                        <path class="st5" d="M1222.7,3147.7c17.8,98.7,91.4,168.1,164.5,155s117.8-103.9,100-202.6s-91.4-168.1-164.5-155
-                        C1249.6,2958.3,1204.9,3049,1222.7,3147.7z" />
+                        <path id="blue_R" class="st5" d="M1222.7,3147.7c17.8,98.7,91.4,168.1,164.5,155s117.8-103.9,100-202.6s-91.4-168.1-164.5-155C1249.6,2958.3,1204.9,3049,1222.7,3147.7z" />
 
                         <radialGradient id="SVGID_6_" cx="3982.4844" cy="3118.2595" r="81.4287"
                             gradientTransform="matrix(-1 0 0 1 5338.894 0)" gradientUnits="userSpaceOnUse">
@@ -247,13 +275,12 @@ template.innerHTML = /*html*/`
                         </radialGradient>
                         
                         <!-- pupil R -->
-                        <path class="st6" d="M1288.2,3130.6c-9.1-50,14.1-96,51.8-102.8c37.7-6.8,75.5,28.2,84.6,78.1c9.1,50-14.1,96-51.8,102.8
-                        S1297.3,3180.6,1288.2,3130.6z" />
-
+                        <path id="pupil_R" class="st6" d="M1288.2,3130.6c-9.1-50,14.1-96,51.8-102.8c37.7-6.8,75.5,28.2,84.6,78.1c9.1,50-14.1,96-51.8,102.8S1297.3,3180.6,1288.2,3130.6z" />
+                                                        
                         <!-- circle highlight R -->
-                        <ellipse class="st3" cx="1401.8"
+                        <ellipse id="highlight_R" class="st3" cx="1401.8"
                             cy="3070.3" rx="31.3" ry="31.3" />
-                        
+                        </g>
                         <!-- lash mid R -->
                         <path d="M1500,2962.6c0,0,110.2,7.5,117.8-115.3c0,0,36.3,125.3-96.5,147.8L1500,2962.6z" />
                         
@@ -306,6 +333,17 @@ class eye extends HTMLElement
         this.leftFullEye = this.shadowRoot.querySelector("#Ir_L");
         this.rightFullEye = this.shadowRoot.querySelector("#Ir_R");
 
+        //selecteerd de iris
+        this.pupil_R = this.shadowRoot.querySelector("#pupil_R");
+        this.pupil_L = this.shadowRoot.querySelector("#pupil_L");
+
+        //selecteerd het blauwe
+        this.blue_R = this.shadowRoot.querySelector("#blue_R");
+        this.blue_L = this.shadowRoot.querySelector("#blue_L");
+
+        //selecteerd highlight
+        this.highlight_R = this.shadowRoot.querySelector("#highlight_R");
+        this.highlight_L = this.shadowRoot.querySelector("#highlight_L");
     }
     
     handler(e){
@@ -315,6 +353,18 @@ class eye extends HTMLElement
         switch(e.detail){
             case "leftEye":
                 console.log(e.detail);
+                
+                y = +this.leftEye.getAttribute("y");
+                x = +this.leftEye.getAttribute("x");
+
+                this.pupil_L.setAttribute("d", `M${955 - x}.9,${3198 - y}.1c9.1-50-14.1-96-51.8-102.8c-37.7-6.8-75.5,28.2-84.6,78.1s14.1,96,51.8,102.8C${909 - x},${3283 - y}.1,${946 - x}.8,${3248 - y}.1,${955 - x}.9,${3198 - y}.1z`);
+
+                this.blue_L.setAttribute("d", `M${1021 - x}.5,${3215 - y}.3c-17.8,98.7-91.4,168.1-164.5,155c-73-13.2-117.8-103.9-100-202.6s91.4-168.1,164.5-155C${994 - x}.5,${3025 - y}.8,${1039 - x}.3,${3116 - y}.5,${1021 - x}.5,${3215 - y}.3z`);
+                
+                this.highlight_L.setAttribute("cx", `${842.3 - x}`);
+                this.highlight_L.setAttribute("cy", `${3137.9 - y}`);
+                cx="792.3"
+                cy="3087.9"
                 break;
                 
             case "leftEyeFull":
@@ -331,6 +381,18 @@ class eye extends HTMLElement
 
             case "rightEye":
                 console.log(e.detail);
+
+                y = +this.rightEye.getAttribute("y");
+                x = +this.rightEye.getAttribute("x");
+
+                this.pupil_R.setAttribute("d", `M${1338 - x}.2,${3180 - y}.6c-9.1-50,14.1-96,51.8-102.8c37.7-6.8,75.5,28.2,84.6,78.1c9.1,50-14.1,96-51.8,102.8 S${1347 - x}.3,${3230-y}.6,${1338 - x}.2,${3180-y}.6z`);
+
+                this.blue_R.setAttribute("d", `M${1272 - x}.7,${3197 - y}.7c17.8,98.7,91.4,168.1,164.5,155s117.8-103.9,100-202.6s-91.4-168.1-164.5-155C${1299 - x}.6,${3008 - y}.3,${1254 - x}.9,${3099 - y},${1272 - x}.7,${3197 - y}.7z`);
+
+                this.highlight_R.setAttribute("cx", `${1451.8 - x}`);
+                this.highlight_R.setAttribute("cy", `${3120.3 - y}`);
+
+
                 break;
 
             case "rightEyeFull":
