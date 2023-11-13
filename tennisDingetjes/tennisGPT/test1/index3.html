@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tennis Scoreboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    #scoreboard {
+      margin: 50px auto;
+      width: 300px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #score {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #sets {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    #games {
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+
+    #buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<div id="scoreboard">
+  <div id="score">0 - 0</div>
+  <div id="sets">Games 1</div>
+  <div id="games">Sets: 0 - 0</div>
+  <div id="buttons">
+    <button onclick="updateScore('player1')">Player 1</button>
+    <button onclick="updateScore('player2')">Player 2</button>
+  </div>
+</div>
+
+<script>
+  let player1Score = 0;
+  let player2Score = 0;
+  let gamesPlayer1 = 0;
+  let gamesPlayer2 = 0;
+  let setsPlayer1 = 0;
+  let setsPlayer2 = 0;
+  let currentSet = 1;
+
+  function updateScore(player) {
+    if (player === 'player1') {
+      player1Score++;
+    } else {
+      player2Score++;
+    }
+
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    document.getElementById('score').innerText = `${player1Score} - ${player2Score}`;
+    document.getElementById('games').innerText = `Games: ${gamesPlayer1} - ${gamesPlayer2}`;
+    document.getElementById('sets').innerText = `Set ${currentSet}`;
+
+    if (player1Score >= 4 && player1Score - player2Score >= 2) {
+      gamesPlayer1++;
+      resetScore();
+    } else if (player2Score >= 4 && player2Score - player1Score >= 2) {
+      gamesPlayer2++;
+      resetScore();
+    }
+
+    if (gamesPlayer1 === 6 || gamesPlayer2 === 6) {
+      if (gamesPlayer1 > gamesPlayer2) {
+        setsPlayer1++;
+      } else {
+        setsPlayer2++;
+      }
+
+      if (setsPlayer1 === 2 || setsPlayer2 === 2) {
+        alert(`Player ${setsPlayer1 === 2 ? '1' : '2'} wins the match!`);
+        resetMatch();
+      } else {
+        currentSet++;
+        gamesPlayer1 = 0;
+        gamesPlayer2 = 0;
+        resetScore();
+      }
+    }
+  }
+
+  function resetScore() {
+    player1Score = 0;
+    player2Score = 0;
+    updateDisplay();
+  }
+
+  function resetMatch() {
+    player1Score = 0;
+    player2Score = 0;
+    gamesPlayer1 = 0;
+    gamesPlayer2 = 0;
+    setsPlayer1 = 0;
+    setsPlayer2 = 0;
+    currentSet = 1;
+    updateDisplay();
+  }
+</script>
+
+</body>
+</html>

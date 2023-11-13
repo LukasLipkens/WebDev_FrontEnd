@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .scoreboard {
+      display: inline-block;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .player {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .score {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="scoreboard">
+  <div class="player" id="player1">Player 1</div>
+  <div class="score" id="score1">0</div>
+  <button onclick="updateScore(1)">Point</button>
+  <button onclick="updateGames(1)">Game</button>
+  <button onclick="updateSets(1)">Set</button>
+
+  <div class="player" id="player2">Player 2</div>
+  <div class="score" id="score2">0</div>
+  <button onclick="updateScore(2)">Point</button>
+  <button onclick="updateGames(2)">Game</button>
+  <button onclick="updateSets(2)">Set</button>
+</div>
+
+<script>
+  let scores = [0, 0];
+  let games = [0, 0];
+  let sets = [0, 0];
+
+  function updateScore(player) {
+    scores[player - 1] += 15; // Simple scoring, assuming 15-30-40 system
+    document.getElementById(`score${player}`).textContent = scores[player - 1];
+  }
+
+  function updateGames(player) {
+    games[player - 1]++;
+    document.getElementById(`score${player}`).textContent = '0';
+    document.getElementById(`score${3 - player}`).textContent = '0';
+    checkGameSet(player);
+  }
+
+  function updateSets(player) {
+    sets[player - 1]++;
+    document.getElementById(`score${player}`).textContent = '0';
+    document.getElementById(`score${3 - player}`).textContent = '0';
+    checkGameSet(player);
+  }
+
+  function checkGameSet(player) {
+    if (games[player - 1] >= 6 && games[player - 1] - games[2 - player] >= 2) {
+      // Player wins the set
+      games = [0, 0];
+      document.getElementById(`score${player}`).textContent = '0';
+      document.getElementById(`score${3 - player}`).textContent = '0';
+      document.getElementById(`player${player}`).textContent = `Player ${player} - Set: ${sets[player - 1]}`;
+      document.getElementById(`player${3 - player}`).textContent = `Player ${3 - player} - Set: ${sets[2 - player]}`;
+    }
+  }
+</script>
+
+</body>
+</html>
