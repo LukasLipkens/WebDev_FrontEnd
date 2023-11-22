@@ -1,0 +1,35 @@
+.player1 { grid-area: player1; }
+.player2 { grid-area: player2; }
+
+.scorePlayer1 { grid-area: scorePlayer1; }
+.scorePlayer2 { grid-area: scorePlayer2; }
+
+.setsPlayer1 { grid-area: setsPlayer1; }
+.setsPlayer2 { grid-area: setsPlayer2; }
+
+.matchesPlayer1 { grid-area: matchesPlayer1; }
+.matchesPlayer2 { grid-area: matchesPlayer2; }
+
+.servePlayer1 { grid-area: servePlayer1; }
+.servePlayer2 { grid-area: servePlayer2; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'player1 player1 player1 player2 player2 player2'
+    'scorePlayer1 setsPlayer1 setsPlayer1 setsPlayer2 setsPlayer2 scorePlayer2'
+    'scorePlayer1 matchesPlayer1 matchesPlayer1 matchesPlayer2 matchesPlayer2 scorePlayer2'
+    'servePlayer1 servePlayer1 servePlayer1 servePlayer2 servePlayer2 servePlayer2';
+  gap: 4px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border: 10px solid black;
+}
+
+.grid-container > div {
+  background-color: rgb(1, 184, 90);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}

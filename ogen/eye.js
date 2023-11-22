@@ -301,8 +301,7 @@ template.innerHTML = /*html*/`
                     </g>
                         <!-- eye bag R -->
                         <path d="M1522.1,3427.4c0,0-176.6-117.8-309.4-6.3C1212.7,3421.1,1420.6,3386,1522.1,3427.4z" />
-                        <!-- helper -->
-                        <circle cx="1390" cy="3400" r="4" stroke="black" stroke-width="1" fill="red" />
+
                 </g>
             </svg>
         </div>
